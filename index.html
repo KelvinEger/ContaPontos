@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contador - Menu</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="titulo nav-wrapper valing-wrapper center-align">
+                    <h3 class="light grey-text">Contando pontos</h3>
+                    <br>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <form method="post">
+                <table class="container centered striped responsive-table">
+                    <tr>
+                        <td>Nome</td>
+                        <td>Ação</td>
+                        <td id="somou"></td>
+                    </tr>
+                    <tr>
+                        <td>Equipe Azul</td>
+                        <td>
+                            <a class="waves-effect blue darken-4 btn"  onclick="somaAzul()">Votar</a>
+                            <input type="hidden" id="azul">
+                        </td>
+                        <td>
+                            <div id="resultadoAzul"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Equipe Verde</td>
+                        <td>
+                            <a class="waves-effect green darken-4 btn"  onclick="somaVerde()">Votar</a>
+                            <input type="hidden" id="verde">
+                        </td>
+                        <td>
+                            <div id="resultadoVerde"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Equipe Amarelo</td>
+                        <td>
+                            <a class="waves-effect amber accent-3 btn"  onclick="somaAmarelo()">Votar</a>
+                            <input type="hidden" id="amarelo">
+                        </td>
+                        <td>
+                            <div id="resultadoAmarelo"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Equipe Rosa</td>
+                        <td>
+                            <a class="waves-effect  red accent-3 btn"  onclick="somaRosa()">Votar</a>
+                        </td>
+                        <td>
+                            <div id="resultadoRosa"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Equipe Vermelha</td>
+                        <td><a class="waves-effect red accent-4 btn"  onclick="somaVermelho()">Votar</a></td>
+                        <td><div id="resultadoVermelho"></div></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: center"><a class="waves-effect grey accent-4 btn"  onclick="apura()">Apurar</a></td>
+                    </tr>
+                </table>
+            </form>
+            <div id="resultado" style="background-color: red; width: 100px; height: 100px; margin-left: 45%">daksdaj</div>
+        </div>
+        <footer class="page-footer  red darken-4">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2016 Copyright Text | <a class="grey-text text-lighten-4" href="https://www.facebook.com/kelvin.eger.5">Kelvin Eger</a> 
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script type="text/javascript">
+                            var totalVermelho = 0;
+                            var totalAmarelo = 0;
+                            var totalAzul = 0;
+                            var totalRosa = 0;
+                            var totalVerde = 0;
+
+                            $(document).ready(function () {
+                                $('#resultado').hide();
+                            });
+
+                            function somaVermelho() {
+                                totalVermelho++;
+                            }
+
+                            function somaAmarelo() {
+                                totalAmarelo++;
+                            }
+
+                            function somaAzul() {
+                                totalAzul++;
+                            }
+
+                            function somaRosa() {
+                                totalRosa++;
+                            }
+
+                            function somaVerde() {
+                                totalVerde++;
+                            }
+                            function apura() {
+                                document.getElementById('somou').innerHTML = '<b>Resultados</b>';
+                                document.getElementById('resultadoRosa').innerHTML = totalRosa;
+                                document.getElementById('resultadoAzul').innerHTML = totalAzul;
+                                document.getElementById('resultadoVermelho').innerHTML = totalVermelho;
+                                document.getElementById('resultadoAmarelo').innerHTML = totalAmarelo;
+                                document.getElementById('resultadoVerde').innerHTML = totalVerde;
+                            }
+            </script>
+    </body>
+</footer>
+</body>
+</html>
